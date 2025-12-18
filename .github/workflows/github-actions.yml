@@ -3,7 +3,7 @@ run-name: Build Release
 on:
   - push
 jobs:
-  Explore-GitHub-Actions:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - uses: r0adkll/sign-android-release@v1
@@ -17,7 +17,7 @@ jobs:
           keyPassword: ${{ secrets.KEY_PASSWORD }}
         env:
           BUILD_TOOLS_VERSION: 34.0.0
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: Signed app bundle
           path: ${{steps.sign_app.outputs.signedReleaseFile}}
