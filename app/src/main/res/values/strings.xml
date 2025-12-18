@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+    <!ENTITY appname "PSO2 Alert">
+    <!ENTITY author "ARKS-Layer">
+    ]>
+<resources>
+    <string name="app_name">&appname;</string>
+    <string name="author">&author;</string>
+
+    <string name="uri_main">https://pso2.acf.me.uk/Projects</string>
+
+    <string name="title_glb">Global</string>
+    <string name="title_jpn">Japan</string>
+    <string name="title_settings">Settings</string>
+
+    <string name="header_settings_general">General</string>
+    <string name="header_settings_servers">Server Selection</string>
+    <string name="header_settings_alerts">Alert Selection</string>
+
+    <string name="name_global_ngs_quest">Global NGS Quests</string>
+    <string name="name_global_classic">Global Classic Quests</string>
+    <string name="name_global_ngs_field">Global NGS Field</string>
+    <string name="name_japan_ngs_quest">Japanese NGS Quests</string>
+    <string name="name_japan_classic">Japanese Classic Quests</string>
+    <string name="name_japan_ngs_field">Japanese NGS Field</string>
+    <string name="name_service">Background Service</string>
+
+    <string name="title_server_global_ngs_quest">Global NGS Quests</string>
+    <string name="title_server_global_classic">Global Classic Quests</string>
+    <string name="title_server_global_ngs_field">Global NGS Field</string>
+    <string name="title_server_japan_ngs_quest">Japanese NGS Quests</string>
+    <string name="title_server_japan_classic">Japanese Classic Quests</string>
+    <string name="title_server_japan_ngs_field">Japanese NGS Field</string>
+
+    <string name="channel_global_ngs_quest_description">Global NGS Urgent Quest Notifications.</string>
+    <string name="channel_global_classic_description">Global Classic Urgent Quest Notifications.</string>
+    <string name="channel_global_ngs_field_description">Global NGS Field Notifications.</string>
+    <string name="channel_japan_ngs_quest_description">Japanese NGS Emergency Quest Notifications.</string>
+    <string name="channel_japan_classic_description">Japanese Classic Emergency Quest Notifications.</string>
+    <string name="channel_japan_ngs_field_description">Japanese NGS Field Notifications.</string>
+
+    <string name="label_no_connection">No Internet Connection</string>
+    <string name="label_disclaimer">Please note that Alerts are community driven and may be missed or incorrect. Contact our Discord if you would like to help.</string>
+    <string name="label_notification_service_sub">Running</string>
+    <string name="label_notification_service_content">Next Check at %1$s…</string>
+
+    <string name="dialog_title_alarms">Please allow Alarm Usage</string>
+    <string name="dialog_message_alarms">Alarms are used to wake the device and check for new alerts.\nThese are required for the app to work properly so please allow them on the next screen.</string>
+    <string name="dialog_title_battery">Please disable Battery Optimizations</string>
+    <string name="dialog_message_battery">Battery Optimizations need to be disabled for this app.\nThis is required to ensure that alerts are not delayed so please allow them on the next screen.</string>
+    <string name="dialog_title_exit">Exit &appname;?</string>
+    <string name="dialog_message_exit">Are you sure you want to exit &appname;?\nThe app will no longer check for Alerts.</string>
+
+    <string name="toast_message_notifications_granted">Alerts can now be sent.</string>
+    <string name="toast_message_notifications_failed">This app cannot work without notification permissions!</string>
+    <string name="toast_message_alarms">Alarms are used to wake the device and check for new alerts.</string>
+    <string name="toast_message_alarms_granted">Alerts can now be scheduled.</string>
+    <string name="toast_message_alarms_failed">This app cannot work without alarms enabled!</string>
+    <string name="toast_message_battery">Please allow &appname; to ignore battery optimizations or alerts will be delayed.</string>
+    <string name="toast_message_server_changed">Alerts for %1$s have been %2$s!</string>
+    <string name="toast_message_alert_changed">Alerts for %1$s have been %2$s!</string>
+    <string name="toast_message_alert_list_failed">Failed to download the list of Alerts: %1$s</string>
+    <string name="toast_message_manual_check">Manually checking for alerts.</string>
+    <string name="toast_message_exit">&appname; will now exit.</string>
+</resources>

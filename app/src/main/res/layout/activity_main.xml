@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/general_background"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/title_background"
+        android:clickable="false"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/icon"
+        app:title="@string/app_name"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Display2"
+        app:titleTextColor="@color/title_text" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="2dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@id/materialToolbar"
+        app:layout_constraintEnd_toEndOf="@id/materialToolbar"
+        app:layout_constraintHeight="match_constraint"
+        app:srcCompat="@android:drawable/btn_dialog" />
+
+    <TextView
+        android:id="@+id/lblMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/label_disclaimer"
+        android:textColor="@color/general_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/lblSettings"
+        app:layout_constraintEnd_toEndOf="@id/lblSettings"
+        app:layout_constraintStart_toStartOf="@id/lblSettings"
+        app:layout_constraintTop_toBottomOf="@id/materialToolbar" />
+
+    <TextView
+        android:id="@+id/lblSettings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/header_background"
+        android:editable="false"
+        android:enabled="true"
+        android:text="@string/title_settings"
+        android:textAlignment="center"
+        android:textColor="@color/header_text"
+        android:textSize="28sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@id/materialToolbar"
+        app:layout_constraintStart_toStartOf="@id/materialToolbar"
+        app:layout_constraintTop_toBottomOf="@id/lblMessage" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbarStyle="insideOverlay"
+        app:layout_constraintBottom_toTopOf="@+id/lblDebug"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblSettings"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblHeaderGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/header_background"
+                android:editable="false"
+                android:enabled="true"
+                android:text="@string/header_settings_general"
+                android:textAlignment="center"
+                android:textColor="@color/header_text"
+                android:textSize="24sp"
+                android:textStyle="normal"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+
+            <LinearLayout
+                android:id="@+id/layout_interval"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblSettingTimer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:duplicateParentState="false"
+                    android:editable="false"
+                    android:gravity="center|left"
+                    android:text="Check Interval:"
+                    android:textAllCaps="false"
+                    android:textColor="@color/general_text"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/settingInterval"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/general_text"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/lblSettingMinutes"
+                    android:layout_width="100sp"
+                    android:layout_height="48dp"
+                    android:duplicateParentState="false"
+                    android:editable="false"
+                    android:gravity="center|left"
+                    android:text="minutes"
+                    android:textAlignment="gravity"
+                    android:textAllCaps="false"
+                    android:textColor="#99E3FF"
+                    android:textIsSelectable="false"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lblHeaderServers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/header_background"
+                android:editable="false"
+                android:enabled="true"
+                android:text="@string/header_settings_servers"
+                android:textAlignment="center"
+                android:textColor="@color/header_text"
+                android:textSize="24sp"
+                android:textStyle="normal" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/settingServers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:focusedByDefault="false"
+                app:selectionRequired="false"
+                app:singleLine="false"
+                app:singleSelection="false">
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/lblServersFail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:editable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:focusedByDefault="false"
+                android:text="@string/label_no_connection"
+                android:textAlignment="center"
+                android:textColor="@color/general_text"
+                android:textSize="20sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/lblHeaderAlerts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/header_background"
+                android:editable="false"
+                android:enabled="true"
+                android:text="@string/header_settings_alerts"
+                android:textAlignment="center"
+                android:textColor="@color/header_text"
+                android:textSize="24sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/settingAlerts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:focusedByDefault="false"
+                app:selectionRequired="false"
+                app:singleLine="false"
+                app:singleSelection="false">
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/lblAlertsFail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:editable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:focusedByDefault="false"
+                android:text="@string/label_no_connection"
+                android:textAlignment="center"
+                android:textColor="@color/general_text"
+                android:textSize="20sp"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/lblDebug"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/title_background"
+        android:editable="false"
+        android:textAlignment="center"
+        android:textColor="#99E3FF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="PSO2 Alert v2.0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_group">Alert_Group</string>
+    <string name="notification_channel_service">Alert_Service</string>
+    <string name="notification_channel_glbn">GLBN_Alert</string>
+    <string name="notification_channel_glbf">GLBF_Alert</string>
+    <string name="notification_channel_glbc">GLBC_Alert</string>
+    <string name="notification_channel_jpnn">JPNN_Alert</string>
+    <string name="notification_channel_jpnf">JPNF_Alert</string>
+    <string name="notification_channel_jpnc">JPNC_Alert</string>
+
+    <string name="code_global_ngs_quest">GLBN</string>"
+    <string name="code_global_ngs_field">GLBF</string>
+    <string name="code_global_classic">GLBC</string>
+    <string name="code_japan_ngs_quest">JPNN</string>
+    <string name="code_japan_ngs_field">JPNF</string>
+    <string name="code_japan_classic">JPNC</string>
+
+    <string name="setting_interval">check_interval</string>
+    <string name="setting_previous">previous_check_%1$s</string>
+
+    <string name="intent_action_dismissed">notification_cancelled</string>
+
+    <integer name="alarm_pending_code">1973</integer>
+    <integer name="service_notification_pending_code">971</integer>
+    <integer name="service_dismissed_pending_code">972</integer>
+    <integer name="foreground_service_id">973</integer>
+
+    <integer name="glbn_notification_id">11</integer>
+    <integer name="glbf_notification_id">12</integer>
+    <integer name="glbc_notification_id">13</integer>
+    <integer name="jpnn_notification_id">16</integer>
+    <integer name="jpnf_notification_id">17</integer>
+    <integer name="jpnc_notification_id">18</integer>
+</resources>

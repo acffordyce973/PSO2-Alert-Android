@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="title_background">#0C2B40</color>
+    <color name="title_text">#FFC601</color>
+
+    <color name="header_background">#0C344D</color>
+    <color name="header_text">#FFC601</color>
+
+    <color name="general_text">#99E3FF</color>
+    <color name="general_background">#081B29</color>
+
+    <color name="chip_background_checked">#144168</color>"
+    <color name="chip_background_unchecked">#04152A</color>
+
+</resources>
