@@ -1,26 +1,23 @@
-import com.android.build.gradle.internal.packaging.createDefaultDebugStore
-import org.apache.tools.ant.util.JavaEnvUtils.VERSION_1_8
+import java.util.Properties
+import java.io.FileInputStream
 
 plugins {
     alias(libs.plugins.android.application)
 }
 
-def keystorePropertiesFile = rootProject.file("keystore.properties")
-def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+val keystoreProperties = Properties()
+keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 
 android {
     ndkVersion = "27.1.12297006"
 
     signingConfigs {
-        getByName("debug") {
-            
-        }
         create("release") {
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
-            storeFile file(keystoreProperties['storeFile'])
-            storePassword keystoreProperties['storePassword']
+            keyAlias = keystoreProperties["keyAlias"] as String
+            keyPassword = keystoreProperties["keyPassword"] as String
+            storeFile = file(keystoreProperties["storeFile"] as String)
+            storePassword = keystoreProperties["storePassword"] as String
         }
     }
     namespace = "com.arks_layer.pso2_alert"
@@ -30,8 +27,8 @@ android {
         applicationId = "com.arks_layer.pso2_alert"
         minSdk = 26
         targetSdk = 34
-        versionCode = 2050
-        versionName = "2.0.5"
+        versionCode = 2060
+        versionName = "2.0.6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         signingConfig = signingConfigs.getByName("release")

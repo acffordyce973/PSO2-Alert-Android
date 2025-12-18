@@ -1,5 +1,5 @@
 # PSO2-Alert Android
-PSO2 Alert is a free application (with no ads) designed to display upcoming Emergency/Urgent quest notifications as well as news related to PSO2 Global and Japan.
+PSO2 Alert is a free application (with no ads) designed to display upcoming Emergency/Urgent quest notifications for PSO2 Classic/NGS Global and Japan.
 
 *Please note that whilst the application is open-source the APIs it uses are not. Please seek permission from AIDA/Arks-Layer if you wish to use it.*
 
