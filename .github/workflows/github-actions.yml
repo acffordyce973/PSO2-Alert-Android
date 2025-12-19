@@ -40,6 +40,11 @@ jobs:
           echo $ENCODED_STRING > properties-b64.txt
           base64 -i -d properties-b64.txt > $SIGNING_PROPERTIES_STORE_PATH
 
+      - name: Copy Keys
+        run: |
+          cp $SIGNING_KEY_STORE_PATH ./app/$SIGNING_KEY_STORE_PATH
+          cp $SIGNING_PROPERTIES_STORE_PATH ./app/$SIGNING_PROPERTIES_STORE_PATH
+
       - name: Build Release apk
         run: ./gradlew assembleRelease
 
