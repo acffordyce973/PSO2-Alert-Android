@@ -41,9 +41,12 @@ jobs:
           base64 -i -d properties-b64.txt > $SIGNING_PROPERTIES_STORE_PATH
 
       - name: Copy Keys
+        env:
+          SIGNING_KEY_STORE_PATH: ${{ secrets.KEYSTORE_KEY_PATH }}
+          SIGNING_PROPERTIES_STORE_PATH: ${{ secrets.KEYSTORE_PROPERTIES_PATH }}
         run: |
-          cp $SIGNING_KEY_STORE_PATH ./app/$SIGNING_KEY_STORE_PATH
-          cp $SIGNING_PROPERTIES_STORE_PATH ./app/$SIGNING_PROPERTIES_STORE_PATH
+          cp $SIGNING_KEY_STORE_PATH app/$SIGNING_KEY_STORE_PATH
+          cp $SIGNING_PROPERTIES_STORE_PATH app/$SIGNING_PROPERTIES_STORE_PATH
 
       - name: Build Release apk
         run: ./gradlew assembleRelease
@@ -55,11 +58,14 @@ jobs:
           paths: |
             app/build/outputs/apk/release/
 
+      - name: List Outputs
+        run: ls app/build/outputs/apk/release/
+
       - name: Create Github Release
         uses: softprops/action-gh-release@v2
         if: github.ref_type == 'tag'
         with:
           generate_release_notes: true
-          prerelease: true
+          prerelease: false
           files: |
             app/build/outputs/apk/release/app-release.apk
