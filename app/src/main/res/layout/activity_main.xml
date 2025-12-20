@@ -43,10 +43,22 @@
         android:text="@string/label_disclaimer"
         android:textColor="@color/general_text"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/lblHomepage"
+        app:layout_constraintEnd_toEndOf="@id/lblHomepage"
+        app:layout_constraintStart_toStartOf="@id/lblHomepage"
+        app:layout_constraintTop_toBottomOf="@id/materialToolbar" />
+
+    <TextView
+        android:id="@+id/lblHomepage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/label_home_page"
+        android:textColor="@color/general_text"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/lblSettings"
         app:layout_constraintEnd_toEndOf="@id/lblSettings"
         app:layout_constraintStart_toStartOf="@id/lblSettings"
-        app:layout_constraintTop_toBottomOf="@id/materialToolbar" />
+        app:layout_constraintTop_toBottomOf="@id/lblMessage" />
 
     <TextView
         android:id="@+id/lblSettings"
@@ -62,7 +74,7 @@
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="@id/materialToolbar"
         app:layout_constraintStart_toStartOf="@id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@id/lblMessage" />
+        app:layout_constraintTop_toBottomOf="@id/lblHomepage" />
 
     <ScrollView
         android:id="@+id/scrollView2"

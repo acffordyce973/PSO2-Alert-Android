@@ -27,8 +27,8 @@ android {
         applicationId = "com.arks_layer.pso2_alert"
         minSdk = 26
         targetSdk = 34
-        versionCode = 2060
-        versionName = "2.0.6"
+        versionCode = 2070
+        versionName = "2.0.7"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         signingConfig = signingConfigs.getByName("release")

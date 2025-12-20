@@ -2,12 +2,15 @@
 <!DOCTYPE resources [
     <!ENTITY appname "PSO2 Alert">
     <!ENTITY author "ARKS-Layer">
+    <!ENTITY apppage "https://github.com/acffordyce973/PSO2-Alert-Android">
+    <!ENTITY discord "https://discord.gg/pso2">
     ]>
 <resources>
     <string name="app_name">&appname;</string>
     <string name="author">&author;</string>
 
     <string name="uri_main">https://pso2.acf.me.uk/Projects</string>
+    <string name="uri_github">&apppage;</string>
 
     <string name="title_glb">Global</string>
     <string name="title_jpn">Japan</string>
@@ -40,7 +43,9 @@
     <string name="channel_japan_ngs_field_description">Japanese NGS Field Notifications.</string>
 
     <string name="label_no_connection">No Internet Connection</string>
-    <string name="label_disclaimer">Please note that Alerts are community driven and may be missed or incorrect. Contact our Discord if you would like to help.</string>
+    <string name="label_disclaimer">Please note that Alerts are community driven and may be missed or incorrect.</string>
+    <string name="label_home_page">Updates, issues, and feature requests can be found at the <a href="&apppage;">PSO2 Alert Homepage</a>.</string>
+    <string name="label_interval">Check Interval:</string>
     <string name="label_notification_service_sub">Running</string>
     <string name="label_notification_service_content">Next Check at %1$s…</string>
 

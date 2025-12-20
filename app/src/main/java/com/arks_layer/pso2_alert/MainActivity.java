@@ -8,7 +8,6 @@ import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -22,13 +21,11 @@ import android.app.NotificationChannelGroup;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.PowerManager;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -69,9 +66,7 @@ public class MainActivity extends AppCompatActivity {
     {
         try {
             Handler mainHandler = new Handler(Looper.getMainLooper());
-            mainHandler.post(() -> {
-                Toast.makeText(context, message, duration).show();
-            });
+            mainHandler.post(() -> Toast.makeText(context, message, duration).show());
         }
         catch (Exception e) {
             Log.e("MainActivity", "Show Toast: " + e.getMessage());
@@ -350,6 +345,12 @@ public class MainActivity extends AppCompatActivity {
         String serverURL = getString(R.string.uri_main) + "/PSO2-Alert/android_message.php";
         Log.d("MainActivity", "Using the following message URL at " + serverURL);
 
+        Handler homepageHandler = new Handler(Looper.getMainLooper());
+        homepageHandler.post(() -> {
+            TextView lblHomepage = findViewById(R.id.lblHomepage);
+            lblHomepage.setMovementMethod(LinkMovementMethod.getInstance());
+        });
+
         //Download data from server
         String apiData = null;
         try {
@@ -363,10 +364,11 @@ public class MainActivity extends AppCompatActivity {
         //Dunno why it needs to be final but it does
         String finalApiData = apiData;
 
-        Handler mainHandler = new Handler(Looper.getMainLooper());
-        mainHandler.post(() -> {
+        Handler messageHandler = new Handler(Looper.getMainLooper());
+        messageHandler.post(() -> {
             TextView lblMessage = findViewById(R.id.lblMessage);
             lblMessage.setText(finalApiData);
+            lblMessage.setMovementMethod(LinkMovementMethod.getInstance());
         });
     }
 
@@ -492,9 +494,7 @@ public class MainActivity extends AppCompatActivity {
                 showToast(context, getString(R.string.toast_message_exit), Toast.LENGTH_LONG);
                 triggerKill(context);
             });
-            alert.setNegativeButton("Cancel", (dialog, whichButton) -> {
-                dialog.cancel();
-            });
+            alert.setNegativeButton("Cancel", (dialog, whichButton) -> dialog.cancel());
 
             alert.show();
         });
