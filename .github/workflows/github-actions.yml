@@ -51,15 +51,15 @@ jobs:
       - name: Build Release apk
         run: ./gradlew assembleRelease
 
+      - name: List Outputs
+        run: ls app/build/outputs/apk/release/
+
       - name: Upload Release Build to Artifacts
         uses: actions/upload-artifact@v6
         with:
           name: release-artifacts
-          paths: |
-            app/build/outputs/apk/release/
-
-      - name: List Outputs
-        run: ls app/build/outputs/apk/release/
+          path: app/build/outputs/apk/release/
+          overwrite: true
 
       - name: Create Github Release
         uses: softprops/action-gh-release@v2
@@ -68,4 +68,4 @@ jobs:
           generate_release_notes: true
           prerelease: false
           files: |
-            app/build/outputs/apk/release/app-release.apk
+            app/build/outputs/apk/release/*.apk
